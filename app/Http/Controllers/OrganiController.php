@@ -49,14 +49,28 @@ class OrganiController extends Controller
 			$miles = $dist * 60 * 1.1515;
 
 			if( $miles < 1 && $lists[$i]->type == $type){
-				array_push($arr, $lists[$i]);
+				
+				$a = array(
+					"id"=>$lists[$i]->id,
+					"name"=>$lists[$i]->name,
+					"lat"=>$lists[$i]->lat,
+					"lon"=>$lists[$i]->lon,
+					"address"=>$lists[$i]->address,
+					"phone"=>$lists[$i]->phone,
+					"type"=>$lists[$i]->type,
+					"opentime"=>$lists[$i]->opentime,
+					"curcount"=>$lists[$i]->curcount,
+					"totalcount"=>$lists[$i]->totalcount,
+					"dist"=>$miles
+				);
+				array_push($arr, $a);
 			}
 
 			$i++;
 		}
 		return array(
 			"result"=>self::RESULT_SUC,
-			"data"=>$arr
+			"data"=>$arr,
 		);
 
 	}

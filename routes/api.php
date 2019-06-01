@@ -18,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('organization/list', 'OrganiController@getList');
-
+Route::get('organization/around/{lat}/{lon}/{type}', 'OrganiController@getAround');
+Route::get('organization/schedule/{organi_id}/{today}', 'OrganiController@getSchedule');

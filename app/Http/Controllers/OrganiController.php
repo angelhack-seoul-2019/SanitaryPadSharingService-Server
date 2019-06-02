@@ -48,7 +48,7 @@ class OrganiController extends Controller
 			$dist = rad2deg($dist);
 			$miles = $dist * 60 * 1.1515;
 
-			if( $miles < 1 && $lists[$i]->type == $type){
+			if( $miles < 1 ){
 				
 				$a = array(
 					"id"=>$lists[$i]->id,
